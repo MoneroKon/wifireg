@@ -1,0 +1,14 @@
+# made by recanman
+[Unit]
+Description=MoneroKon Wi-Fi Registration Service
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/wifireg
+WorkingDirectory=/opt/wifireg
+Restart=always
+User=wifireg
+Group=wifireg
+
+[Install]
+WantedBy=multi-user.target
