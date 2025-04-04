@@ -1,0 +1,6 @@
+:80 {
+	root * /opt/wifireg/frontend
+	file_server
+
+	reverse_proxy /register localhost:8000
+}
