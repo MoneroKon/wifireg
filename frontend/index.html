@@ -1,0 +1,58 @@
+<!-- made by recanman -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>MoneroKon Secure Wi-Fi Registration</title>
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<header>
+			<div class="logo-container">
+				<img src="/MKLogoDark.svg" alt="MoneroKon Logo" />
+			</div>
+			<h1>Wi-Fi Registration</h1>
+		</header>
+		<main>
+			<section class="registration-info">
+				<p>
+					Create a login for the secure MoneroKon Wi-Fi network.
+					<b>DO NOT USE IMPORTANT CREDENTIALS</b>.
+				</p>
+			</section>
+			<section class="registration-form">
+				<form action="/register" method="POST" autocomplete="off">
+					<label for="username">Username:</label>
+					<input type="text" name="username" required minlength="1" maxlength="128" />
+
+					<label for="password">Password:</label>
+					<input type="password" name="password" required minlength="1" maxlength="128" />
+
+					<button type="submit">Register</button>
+				</form>
+			</section>
+			<hr />
+			<section class="instructions"></section>
+				<h2>Instructions</h2>
+				<p style="text-align: justify">
+					To connect to the secure MoneroKon Wi-Fi network, follow the steps on the
+					<a href="instructions.html" target="_blank">Instructions Page</a>. The name of the secure network is <code>MoneroKon-Secure</code>.
+				</p>
+				<p style="text-align: justify">
+					If you cannot install certificates, connect to the <code>MoneroKon-PSK</code> network with the password <code>twed-prague2025</code>. <b>Always assume that there are malicious networks at this event. It is highly recommended to connect to the secure network.</b>
+				</p>
+			</section>
+		</main>
+		<footer>
+			<a href="https://twed.org/about/privacy-policy.html" target="_blank">Privacy Policy</a>
+			<span>
+				Copyright &copy; 2025 <a href="https://twed.org" target="_blank">T.E. z.s.</a>
+			</span>
+			<small style="margin-top: 1rem;">
+				<a href="https://github.com/MoneroKon/wifireg" target="_blank">Source code</a>
+			</small>
+		</footer>
+	</body>
+</html>
