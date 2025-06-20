@@ -2,7 +2,6 @@
 package registration
 
 import (
-	"encoding/json"
 	"log"
 	"net/http"
 	"sync"
@@ -39,18 +38,23 @@ func HandleAddUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var user AddUserRequest
-	var err error
-	if err = json.NewDecoder(r.Body).Decode(&user); err != nil {
+	if err := r.ParseForm(); err != nil {
 		http.Error(w, "Invalid input", http.StatusBadRequest)
 		return
 	}
 
+	username := r.FormValue("username")
+	password := r.FormValue("password")
+	user := AddUserRequest{
+		Username: username,
+		Password: password,
+	}
+
 	if !OPNSENSE_USERNAME_REGEX.MatchString(user.Username) {
-		http.Error(w, "Invalid input", http.StatusBadRequest)
+		http.Error(w, "Your username must be between 1-128 characters, and must only contain alphanumeric symbols", http.StatusBadRequest)
 		return
 	} else if !OPNSENSE_PASSWORD_REGEX.MatchString(user.Password) {
-		http.Error(w, "Invalid input", http.StatusBadRequest)
+		http.Error(w, "Your password must be between 1-128 characters.", http.StatusBadRequest)
 		return
 	}
 
