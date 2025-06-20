@@ -42,6 +42,5 @@ func registerUser(w http.ResponseWriter, user AddUserRequest) {
 	}
 
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintln(w, "User successfully registered")
-
+	fmt.Fprintln(w, "You have successfully been registered. Please follow the instructions at https://wifireg.monerokon.org/instructions.html to connect.")
 }
